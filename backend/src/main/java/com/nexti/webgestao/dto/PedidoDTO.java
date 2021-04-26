@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.nexti.webgestao.entities.Pedido;
 
@@ -36,8 +35,7 @@ public class PedidoDTO implements Serializable {
 		id = entity.getId();
 		totalCompra = entity.getTotalCompra();
 		dataCompra = entity.getDataCompra();
-		//produtos = entity.getProdutos().stream().map(x -> new ProdutoDTO(x)).collect(Collectors.toList());
-		//clientes = entity.getCliente().stream().map(x -> new ClienteDTO(x)).collect(Collectors.toList());
+		
 
 	}
 

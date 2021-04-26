@@ -1,7 +1,6 @@
 package com.nexti.webgestao.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,21 +19,22 @@ public class Cliente implements Serializable {
 	private Long id;
 	private String nome;
 	private String cpf;
-	private Date dataNascimento;
-	
-	 
+	private String nascimento;
 
 	public Cliente() {
 
 	}
 
-	public Cliente(Long id, String nome, String cpf, Date dataNascimento) {
 
+	public Cliente(Long id, String nome, String cpf, String nascimento) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.dataNascimento = dataNascimento;
+		this.nascimento = nascimento;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -60,14 +60,13 @@ public class Cliente implements Serializable {
 		this.cpf = cpf;
 	}
 
-	public Date getDataNascimento() {
-		return dataNascimento;
+	public String getNascimento() {
+		return nascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
 	}
-
 
 	@Override
 	public int hashCode() {

@@ -23,7 +23,7 @@ public class ClienteService {
 
 	@Transactional(readOnly = true)
 	public List<ClienteDTO> findAll() {
-		List<Cliente> lista = repository.findAllByOrderByNomeAsc();
+		List<Cliente> lista = repository.findAll();
 		return lista.stream().map(x -> new ClienteDTO(x)).collect(Collectors.toList());
 	}
 
@@ -32,7 +32,7 @@ public class ClienteService {
 		Cliente entity = new Cliente();
 		entity.setNome(dto.getNome());
 		entity.setCpf(dto.getCpf());
-		entity.setDataNascimento(dto.getDataNascimento());
+		entity.setNascimento(dto.getNascimento());
 		entity = repository.save(entity);
 		return new ClienteDTO(entity);
 	}
@@ -42,7 +42,7 @@ public class ClienteService {
 		try {
 			Cliente entity = repository.getOne(id);
 			entity.setNome(dto.getNome());
-			entity.setDataNascimento(dto.getDataNascimento());
+			entity.setNascimento(dto.getNascimento());
 			entity.setCpf(dto.getCpf());
 			entity = repository.save(entity);
 

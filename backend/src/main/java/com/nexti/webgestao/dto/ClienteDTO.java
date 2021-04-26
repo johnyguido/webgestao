@@ -1,7 +1,6 @@
 package com.nexti.webgestao.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import com.nexti.webgestao.entities.Cliente;
 
@@ -11,18 +10,18 @@ public class ClienteDTO implements Serializable{
 	private Long id;
 	private String nome;
 	private String cpf;
-	private Date dataNascimento;
+	private String nascimento;
 	
 	public ClienteDTO() {
 		
 	}
 
-	public ClienteDTO(Long id, String nome, String cpf, Date dataNascimento) {
+	public ClienteDTO(Long id, String nome, String cpf, String nascimento) {
 		
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.dataNascimento = dataNascimento;
+		this.nascimento = nascimento;
 	}
 	
 	public ClienteDTO(Cliente entity) {
@@ -30,7 +29,7 @@ public class ClienteDTO implements Serializable{
 		id = entity.getId();
 		nome = entity.getNome();
 		cpf = entity.getCpf();
-		dataNascimento = entity.getDataNascimento();
+		nascimento = entity.getNascimento();
 	}
 
 	public Long getId() {
@@ -57,12 +56,12 @@ public class ClienteDTO implements Serializable{
 		this.cpf = cpf;
 	}
 
-	public Date getDataNascimento() {
-		return dataNascimento;
+	public String getNascimento() {
+		return nascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
 	}
 	
 	
